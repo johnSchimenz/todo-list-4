@@ -1,0 +1,9 @@
+#bottom-container {
+    display: flex;
+    
+}
+
+div {
+    border-style: solid;
+    border-color: blue;
+}
