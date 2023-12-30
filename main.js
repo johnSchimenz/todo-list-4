@@ -12,7 +12,7 @@ const toDoStorage = [];
 
 // Project factory
 
-// ToDo factory
+// Todo factory
 const ToDoFactory = (title, description, dueDate, priority, notes, checklist) => {
     title = title;
     description = description;
@@ -62,7 +62,20 @@ const selectToDosContainer = document.querySelector('#todos-container');
 const clickNewProjectButton = document.querySelector('#create-project');
 const clickNewToDoButton = document.querySelector('#create-todo');
 
-// Function that adds elements to a container
+// DOM - Displays todo items
+function displayItems(...items) {
+    
+    const countItems = items.length;
+    for (let i = 0; i < countItems; i++) {
+
+        // Create container for each todo item
+        const toDoContainer = document.createElement('div');
+        toDoContainer.setAttribute('class', 'todo');
+        toDoContainer.textContent = 
+    }
+    
+
+}
 
 // Function that removes elements in a container
 
