@@ -6,6 +6,10 @@ Reminders:
 
 // BEHIND THE SCENES STUFF
 
+// Initialize storage location for projects and todos
+const projectStorage = [];
+const toDoStorage = [];
+
 // Project factory
 
 // ToDo factory
