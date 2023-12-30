@@ -1,3 +1,9 @@
+/*
+Reminders:
+-querySelector only works at time it is initialized
+*/
+
+
 // BEHIND THE SCENES STUFF
 
 // Project factory
@@ -13,9 +19,14 @@ const ToDoFactory = (title, description, dueDate, priority, notes, checklist) =>
     return {title, description, dueDate, priority, notes, checklist};
 }
 
+// Function that updates
+    // Function that adds items
+
+    // Function that removes items
+
 
 // DOM STUFF
 
-// Function to remove elements in a container
+// Function that removes elements in a container
 
-// Function to add elements to a container
+// Function that adds elements to a container
