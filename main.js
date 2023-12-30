@@ -29,23 +29,29 @@ const toDo3 = ToDoFactory('m', 'n', 'o', 'p', 'q', 'r');
 const toDo4 = ToDoFactory('s', 't', 'u', 'v', 'w', 'x');
 const toDo5 = ToDoFactory('y', 'z', 'aa', 'bb', 'cc', 'dd');
 
-addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3);
-console.log(toDoStorage);
-
-
-
-
 // Function that updates
 // Function that adds items
 function addItemsToStorage(storageArray, ...items) {
-    return storageArray.push(items);
+    for (let i = 0; i < items.length; i++) {
+        storageArray.push(items[i]);
+    }
+    return storageArray;
 }
 // Function that removes items
 function removeItemsFromStorage(storageArray, ...items) {
-    return storageArray.splice('start', 'deleteCount', 'item1', 'etc.'); // Syntax
+    for (let i = 0; i < items.length; i++) {
+        storageArray.pop(items[i]);
+    }
+    return storageArray;
 }
 
+addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
+console.log(toDoStorage);
 
+console.log([toDo1, toDo2, toDo3, toDo4, toDo5]);
+
+removeItemsFromStorage(toDoStorage, toDo3);
+console.log(toDoStorage);
 
 // DOM STUFF
 
