@@ -23,15 +23,28 @@ const ToDoFactory = (title, description, dueDate, priority, notes, checklist) =>
     return {title, description, dueDate, priority, notes, checklist};
 }
 
+const toDo1 = ToDoFactory('a', 'b', 'c', 'd', 'e', 'f');
+const toDo2 = ToDoFactory('g', 'h', 'i', 'j', 'k', 'l');
+const toDo3 = ToDoFactory('m', 'n', 'o', 'p', 'q', 'r');
+const toDo4 = ToDoFactory('s', 't', 'u', 'v', 'w', 'x');
+const toDo5 = ToDoFactory('y', 'z', 'aa', 'bb', 'cc', 'dd');
+
+addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3);
+console.log(toDoStorage);
+
+
+
+
 // Function that updates
-    // Function that adds items
-    function addItemsToStorage(storageArray, ...items) {
-        return storageArray.push(items);
-    }
-    // Function that removes items
-    function removeItemsFromStorage(storageArray, ...items) {
-        return storageArray.splice('start', 'deleteCount', 'item1', 'etc.');
-    }
+// Function that adds items
+function addItemsToStorage(storageArray, ...items) {
+    return storageArray.push(items);
+}
+// Function that removes items
+function removeItemsFromStorage(storageArray, ...items) {
+    return storageArray.splice('start', 'deleteCount', 'item1', 'etc.'); // Syntax
+}
+
 
 
 // DOM STUFF
