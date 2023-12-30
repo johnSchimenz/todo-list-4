@@ -25,8 +25,13 @@ const ToDoFactory = (title, description, dueDate, priority, notes, checklist) =>
 
 // Function that updates
     // Function that adds items
-
+    function addItemsToStorage(storageArray, ...items) {
+        return storageArray.push(items);
+    }
     // Function that removes items
+    function removeItemsFromStorage(storageArray, ...items) {
+        return storageArray.splice('start', 'deleteCount', 'item1', 'etc.');
+    }
 
 
 // DOM STUFF
