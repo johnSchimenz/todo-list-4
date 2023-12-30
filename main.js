@@ -32,15 +32,17 @@ const toDo5 = ToDoFactory('y', 'z', 'aa', 'bb', 'cc', 'dd');
 // Function that updates
 // Function that adds items
 function addItemsToStorage(storageArray, ...items) {
-    for (let i = 0; i < items.length; i++) {
+    const countItems = items.length;
+    for (let i = 0; i < countItems; i++) {
         storageArray.push(items[i]);
     }
     return storageArray;
 }
 // Function that removes items
 function removeItemsFromStorage(storageArray, ...items) {
-    for (let i = 0; i < items.length; i++) {
-        storageArray.pop(items[i]);
+    const countItems = items.length;
+    for (let i = 0; i < countItems; i++) {
+        storageArray.pop();
     }
     return storageArray;
 }
@@ -48,9 +50,7 @@ function removeItemsFromStorage(storageArray, ...items) {
 addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
 console.log(toDoStorage);
 
-console.log([toDo1, toDo2, toDo3, toDo4, toDo5]);
-
-removeItemsFromStorage(toDoStorage, toDo3);
+removeItemsFromStorage(toDoStorage, 1, 2, 3, 4);
 console.log(toDoStorage);
 
 // DOM STUFF
