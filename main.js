@@ -54,7 +54,15 @@ removeItemsFromStorage(toDoStorage, 1, 2, 3, 4);
 console.log(toDoStorage);
 
 // DOM STUFF
+// DOM - List of all querySelector's
+const selectBottomLeftContainer = document.querySelector('#bottom-left-container');
+const selectBottomRightContainer = document.querySelector('#bottom-right-container');
+const selectProjectsContainer = document.querySelector('#projects-container');
+const selectToDosContainer = document.querySelector('#todos-container');
+const clickNewProjectButton = document.querySelector('#create-project');
+const clickNewToDoButton = document.querySelector('#create-todo');
+
+// Function that adds elements to a container
 
 // Function that removes elements in a container
 
-// Function that adds elements to a container
