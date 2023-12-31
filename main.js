@@ -10,6 +10,9 @@ Reminders:
 const projectStorage = [];
 const toDoStorage = [];
 
+// Specify parameters for ToDoFactory
+const parametersToDo = ['title', 'description', 'dueDate', 'priority', 'notes', 'checklist'];
+
 // Project factory
 
 // Todo factory
@@ -71,7 +74,8 @@ function displayItems(...items) {
         // Create container for each todo item
         const toDoContainer = document.createElement('div');
         toDoContainer.setAttribute('class', 'todo');
-        toDoContainer.textContent = 
+        toDoContainer.textContent = items[i];
+        selectToDosContainer.appendChild(toDoContainer);
     }
     
 
