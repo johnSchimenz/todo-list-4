@@ -3,7 +3,6 @@ Reminders:
 -querySelector only works at time it is initialized
 */
 
-
 // BEHIND THE SCENES STUFF
 
 // Initialize storage location for projects and todos
@@ -71,7 +70,7 @@ function displayItems(...items) {
     const countItems = items.length;
     for (let i = 0; i < countItems; i++) {
 
-        // Create container for each todo item
+        // Create container for each item
         const toDoContainer = document.createElement('div');
         toDoContainer.setAttribute('class', 'todo');
         toDoContainer.textContent = items[i];
@@ -81,5 +80,6 @@ function displayItems(...items) {
 
 }
 
+displayItems('aaaa', 'bbb')
 // Function that removes elements in a container
 
