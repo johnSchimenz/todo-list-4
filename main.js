@@ -64,22 +64,26 @@ const selectToDosContainer = document.querySelector('#todos-container');
 const clickNewProjectButton = document.querySelector('#create-project');
 const clickNewToDoButton = document.querySelector('#create-todo');
 
-// DOM - Displays todo items
-function displayItems(...items) {
+// DOM - Function that displays items in a container
+function displayDOMItems(parentContainer, ...items) {
     
     const countItems = items.length;
     for (let i = 0; i < countItems; i++) {
 
         // Create container for each item
-        const toDoContainer = document.createElement('div');
-        toDoContainer.setAttribute('class', 'todo');
-        toDoContainer.textContent = items[i];
-        selectToDosContainer.appendChild(toDoContainer);
+        const childContainer = document.createElement('div');
+        childContainer.setAttribute('class', 'todo');
+        childContainer.textContent = items[i];
+        parentContainer.appendChild(childContainer);
     }
-    
-
 }
 
-displayItems('aaaa', 'bbb')
-// Function that removes elements in a container
+// DOM - Function that removes elements in a container
+function removeDOMItems(container) {
+    
+    // Count number of child elements in container
+    const countItems = container.childElementCount;
 
+    // Rem
+
+}
