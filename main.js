@@ -9,6 +9,9 @@ Reminders:
 const projectStorage = [];
 const toDoStorage = [];
 
+// Specify parameters for ProjectFactory
+const projectParameters = ['title', 'toDos'];
+
 // Specify parameters for ToDoFactory
 const toDoParameters = ['title', 'description', 'dueDate', 'priority', 'notes', 'checklist'];
 
@@ -95,6 +98,8 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
 }
 
 displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
+
+displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
 /*
 // DOM - Function that displays items in a container - WORKS
