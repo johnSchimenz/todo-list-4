@@ -31,8 +31,6 @@ const toDo3 = ToDoFactory('Mop', 'n', 'o', 'p', 'q', 'r');
 const toDo4 = ToDoFactory('Vaccuum', 't', 'u', 'v', 'w', 'x');
 const toDo5 = ToDoFactory('Yard Work', 'z', 'aa', 'bb', 'cc', 'dd');
 
-
-
 // Function that updates
 // Function that adds items
 function addItemsToStorage(storageArray, ...items) {
@@ -75,8 +73,14 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
     for (let i = 0; i < countStorageItems; i++) {
         const childContainer = document.createElement('div');
         childContainer.setAttribute('class', classAttribute);
-        childContainer.textContent = storage[i][parameters[0]];
         parentContainer.appendChild(childContainer);
+
+        // Create sub-container for each item
+        for (let j = 0; j < 6; j++) {
+            const subChildContainer = document.createElement('div');
+            subChildContainer.textContent = storage[i][parameters[j]];
+            childContainer.appendChild(subChildContainer);
+        }
     }
 }
 
