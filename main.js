@@ -6,13 +6,18 @@ Reminders:
 // BEHIND THE SCENES STUFF
 
 // Initialize storage location for projects and todos
-const projectStorageArray = [];
+const projectStorage = [];
 const toDoStorage = [];
 
 // Specify parameters for ToDoFactory
 const toDoParameters = ['title', 'description', 'dueDate', 'priority', 'notes', 'checklist'];
 
 // Project factory
+const ProjectFactory = (title) => {
+    title = title;
+    toDos = [];
+    return {title, toDos};
+}
 
 // Todo factory
 const ToDoFactory = (title, description, dueDate, priority, notes, checklist) => {
@@ -24,6 +29,10 @@ const ToDoFactory = (title, description, dueDate, priority, notes, checklist) =>
     checklist = checklist;
     return {title, description, dueDate, priority, notes, checklist};
 }
+
+const project1 = ProjectFactory('Chores');
+const project2 = ProjectFactory('Vacation');
+const project3 = ProjectFactory('Workout');
 
 const toDo1 = ToDoFactory('Grocery Store', 'b', 'c', 'd', 'e', 'f');
 const toDo2 = ToDoFactory('Sweep', 'h', 'i', 'j', 'k', 'l');
@@ -50,7 +59,8 @@ function removeItemsFromStorage(storageArray, ...items) {
 }
 
 addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
-console.log(toDoStorage);
+
+addItemsToStorage(projectStorage, project1, project2, project3);
 
 // DOM STUFF
 // DOM - List of all querySelector's
