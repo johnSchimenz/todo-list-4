@@ -6,11 +6,11 @@ Reminders:
 // BEHIND THE SCENES STUFF
 
 // Initialize storage location for projects and todos
-const projectStorage = [];
+const projectStorageArray = [];
 const toDoStorage = [];
 
 // Specify parameters for ToDoFactory
-const parametersToDo = ['title', 'description', 'dueDate', 'priority', 'notes', 'checklist'];
+const toDoParameters = ['title', 'description', 'dueDate', 'priority', 'notes', 'checklist'];
 
 // Project factory
 
@@ -25,11 +25,11 @@ const ToDoFactory = (title, description, dueDate, priority, notes, checklist) =>
     return {title, description, dueDate, priority, notes, checklist};
 }
 
-const toDo1 = ToDoFactory('a', 'b', 'c', 'd', 'e', 'f');
-const toDo2 = ToDoFactory('g', 'h', 'i', 'j', 'k', 'l');
-const toDo3 = ToDoFactory('m', 'n', 'o', 'p', 'q', 'r');
-const toDo4 = ToDoFactory('s', 't', 'u', 'v', 'w', 'x');
-const toDo5 = ToDoFactory('y', 'z', 'aa', 'bb', 'cc', 'dd');
+const toDo1 = ToDoFactory('Grocery Store', 'b', 'c', 'd', 'e', 'f');
+const toDo2 = ToDoFactory('Sweep', 'h', 'i', 'j', 'k', 'l');
+const toDo3 = ToDoFactory('Mop', 'n', 'o', 'p', 'q', 'r');
+const toDo4 = ToDoFactory('Vaccuum', 't', 'u', 'v', 'w', 'x');
+const toDo5 = ToDoFactory('Yard Work', 'z', 'aa', 'bb', 'cc', 'dd');
 
 // Function that updates
 // Function that adds items
@@ -52,9 +52,6 @@ function removeItemsFromStorage(storageArray, ...items) {
 addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
 console.log(toDoStorage);
 
-removeItemsFromStorage(toDoStorage, 1, 2, 3, 4);
-console.log(toDoStorage);
-
 // DOM STUFF
 // DOM - List of all querySelector's
 const selectBottomLeftContainer = document.querySelector('#bottom-left-container');
@@ -64,22 +61,45 @@ const selectToDosContainer = document.querySelector('#todos-container');
 const clickNewProjectButton = document.querySelector('#create-project');
 const clickNewToDoButton = document.querySelector('#create-todo');
 
-// DOM - Function that displays items in a container
-function displayDOMItems(parentContainer, ...items) {
-    
-    const countItems = items.length;
-    for (let i = 0; i < countItems; i++) {
 
-        // Create container for each item
+// DOM - Function that displays items in a container
+function displayDomItems(parentContainer, storage, parameters, classAttribute) {
+    
+    // Length of storage
+    const countStorageItems = storage.length;
+    console.log(countStorageItems);
+
+    // Create container for each item
+    for (let i = 0; i < countStorageItems; i++) {
         const childContainer = document.createElement('div');
-        childContainer.setAttribute('class', 'todo');
-        childContainer.textContent = items[i];
+        childContainer.setAttribute('class', classAttribute);
+        childContainer.textContent = storage[i].title;
         parentContainer.appendChild(childContainer);
     }
 }
 
+displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
+
+/*
+// DOM - Function that displays items in a container - WORKS
+function displayDomItems(parentContainer, storage, classAttribute) {
+    
+    const countItems = items.length;
+    console.log(countItems);
+    for (let i = 0; i < countItems; i++) {
+
+        // Create container for each item
+        const childContainer = document.createElement('div');
+        childContainer.setAttribute('class', classAttribute);
+        childContainer.textContent = JSON.stringify(items[i]);
+        parentContainer.appendChild(childContainer);
+    }
+}
+*/
+
+/*
 // DOM - Function that removes elements in a container
-function removeDOMItems(container) {
+function removeDomItems(container) {
     
     // Count number of child elements in container
     const countItems = container.childElementCount;
@@ -87,3 +107,4 @@ function removeDOMItems(container) {
     // Rem
 
 }
+*/
