@@ -104,10 +104,54 @@ displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'pro
 // DOM - Make clickNewProjectButton clickable
 clickNewProjectButton.addEventListener ('click', () => {
 
-    // Temporarily disable button
+    // Temporarily disable both create new buttons
     clickNewProjectButton.setAttribute('disabled', 'disabled');
+    clickNewToDoButton.setAttribute('disabled', 'disabled');
 
-    // 
+    // Create fieldset for form
+    const fieldset = document.createElement('fieldset');
+    fieldset.setAttribute('id', 'fieldset');
+    selectProjectsContainer.before(fieldset);
+
+    // Create inputBox for form
+    const inputBox = document.createElement('input');
+    inputBox.setAttribute('id', projectParameters[0]);
+    fieldset.appendChild(inputBox);
+
+    // Create Submit button for form
+    const submitButton = document.createElement('button');
+    submitButton.setAttribute('type', 'submit');
+    submitButton.setAttribute('id', 'submit');
+    submitButton.textContent = 'Submit';
+    fieldset.appendChild(submitButton);
+
+    // Create Cancel button for form
+    const cancelButton = document.createElement('button');
+    cancelButton.setAttribute('type', 'button');
+    cancelButton.setAttribute('id', 'cancel');
+    cancelButton.textContent = 'Cancel';
+    fieldset.appendChild(cancelButton);
+
+    // DOM - make Cancel button clickable
+    cancelButton.addEventListener('click', () => {
+        selectBottomLeftContainer.removeChild(fieldset);
+    })
+
+    // DOM - make Submit button clickable
+    submitButton.addEventListener ('click', () => {
+
+        // Remove fieldset
+        selectBottomLeftContainer.removeChild(fieldset);
+
+        // Create new Project
+        const newestProject = ProjectFactory(inputBox.value);
+
+        // Add new Project to Projects Array
+
+        // DOM - display new Project in Projects Array
+
+
+    })
 })
 
 /*
