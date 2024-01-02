@@ -179,12 +179,36 @@ clickNewToDoButton.addEventListener ('click', () => {
     const fieldset = document.createElement('fieldset');
     fieldset.setAttribute('id', 'fieldset');
     selectToDosContainer.before(fieldset);
-    /*
-    // Create inputBox for form
-    const inputBox = document.createElement('input');
-    inputBox.setAttribute('id', projectParameters[0]);
-    fieldset.appendChild(inputBox);
 
+    // Find number of todo parameters
+    const countToDoParameters = toDoParameters.length;
+
+    // Create labels and inputBox's for form, putting each pair in a container
+    for (let i = 0; i < countToDoParameters; i++) {
+
+        const pairLabelInputContainer = document.createElement('div');
+        pairLabelInputContainer.setAttribute('id', toDoParametersParameters[i] + '-container');
+        pairLabelInputContainer.setAttribute('class', 'pair-label-inputbox');
+        pairLabelInputContainer.textContent = 'yp';
+        fieldset.appendChild(pairLabelInputContainer);
+
+        const selectPairLabelInputContainer = document.querySelector('#' + pairLabelInputContainer.id);
+
+        /*
+        const label = document.createElement('label');
+        label.setAttribute('for', toDoParameters[i]);
+        label.textContent = toDoParameters[i];
+        selectPairLabelInputContainer.appendChild(label);
+        
+        const inputBox = document.createElement('input');
+        inputBox.setAttribute('type', 'text');
+        inputBox.setAttribute('id', toDoParameters[i]);
+        inputBox.setAttribute('name', toDoParameters[i]);
+        selectPairLabelInputContainer.appendChild(inputBox);
+        */
+    }
+
+    /*
     // Create Submit button for form
     const submitButton = document.createElement('button');
     submitButton.setAttribute('type', 'submit');
