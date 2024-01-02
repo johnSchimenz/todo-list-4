@@ -166,17 +166,65 @@ clickNewProjectButton.addEventListener ('click', () => {
     // Re-enables both create new buttons
     clickNewProjectButton.removeAttribute('disabled');
     clickNewToDoButton.removeAttribute('disabled');
-
 })
 
-/*
-// DOM - Function that removes elements in a container
-function removeDomItems(container) {
+// DOM - Make clickNewToDoButton clickable
+clickNewToDoButton.addEventListener ('click', () => {
+
+    // Temporarily disable both create new buttons
+    clickNewProjectButton.setAttribute('disabled', 'disabled');
+    clickNewToDoButton.setAttribute('disabled', 'disabled');
     
-    // Count number of child elements in container
-    const countItems = container.childElementCount;
+    // Create fieldset for form
+    const fieldset = document.createElement('fieldset');
+    fieldset.setAttribute('id', 'fieldset');
+    selectToDosContainer.before(fieldset);
+    /*
+    // Create inputBox for form
+    const inputBox = document.createElement('input');
+    inputBox.setAttribute('id', projectParameters[0]);
+    fieldset.appendChild(inputBox);
 
-    // Rem
+    // Create Submit button for form
+    const submitButton = document.createElement('button');
+    submitButton.setAttribute('type', 'submit');
+    submitButton.setAttribute('id', 'submit');
+    submitButton.textContent = 'Submit';
+    fieldset.appendChild(submitButton);
 
-}
-*/
+    // Create Cancel button for form
+    const cancelButton = document.createElement('button');
+    cancelButton.setAttribute('type', 'button');
+    cancelButton.setAttribute('id', 'cancel');
+    cancelButton.textContent = 'Cancel';
+    fieldset.appendChild(cancelButton);
+
+    // DOM - make Cancel button clickable
+    cancelButton.addEventListener('click', () => {
+        selectBottomLeftContainer.removeChild(fieldset);
+    })
+
+    // DOM - make Submit button clickable
+    submitButton.addEventListener ('click', () => {
+
+        // Remove fieldset
+        selectBottomLeftContainer.removeChild(fieldset);
+
+        // Create new Project
+        const newestProject = ProjectFactory(inputBox.value);
+
+        // Add newestProject to storage
+        projectStorage.push(newestProject);
+
+        // DOM - remove previously displayed projects
+        removeDomItems('project');
+
+        // DOM - display all projects, including newestProject
+        displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
+    })
+
+    // Re-enables both create new buttons
+    clickNewProjectButton.removeAttribute('disabled');
+    clickNewToDoButton.removeAttribute('disabled');
+    */
+})
