@@ -80,7 +80,6 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
     
     // Length of storage
     const countStorageItems = storage.length;
-    console.log(countStorageItems);
 
     // Create container for each item
     for (let i = 0; i < countStorageItems; i++) {
@@ -95,6 +94,14 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
             childContainer.appendChild(subChildContainer);
         }
     }
+}
+
+// DOM - Function that removes items in a container
+function removeDomItems(classAttribute) {
+    const selectRemovableItems = document.querySelectorAll('.' + classAttribute);
+    selectRemovableItems.forEach((item) => {
+        item.remove();
+    })
 }
 
 displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
@@ -146,9 +153,11 @@ clickNewProjectButton.addEventListener ('click', () => {
         // Create new Project
         const newestProject = ProjectFactory(inputBox.value);
 
-        // Add new Project to Projects Array
+        // Add newestProject to storage
+        projectStorage.push(newestProject);
 
         // DOM - display new Project in Projects Array
+        displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
 
     })
