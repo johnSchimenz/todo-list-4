@@ -101,22 +101,14 @@ displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
 
 displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
-/*
-// DOM - Function that displays items in a container - WORKS
-function displayDomItems(parentContainer, storage, classAttribute) {
-    
-    const countItems = items.length;
-    console.log(countItems);
-    for (let i = 0; i < countItems; i++) {
+// DOM - Make clickNewProjectButton clickable
+clickNewProjectButton.addEventListener ('click', () => {
 
-        // Create container for each item
-        const childContainer = document.createElement('div');
-        childContainer.setAttribute('class', classAttribute);
-        childContainer.textContent = JSON.stringify(items[i]);
-        parentContainer.appendChild(childContainer);
-    }
-}
-*/
+    // Temporarily disable button
+    clickNewProjectButton.setAttribute('disabled', 'disabled');
+
+    // 
+})
 
 /*
 // DOM - Function that removes elements in a container
