@@ -156,11 +156,17 @@ clickNewProjectButton.addEventListener ('click', () => {
         // Add newestProject to storage
         projectStorage.push(newestProject);
 
-        // DOM - display new Project in Projects Array
+        // DOM - remove previously displayed projects
+        removeDomItems('project');
+
+        // DOM - display all projects, including newestProject
         displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
-
-
     })
+
+    // Re-enables both create new buttons
+    clickNewProjectButton.removeAttribute('disabled');
+    clickNewToDoButton.removeAttribute('disabled');
+
 })
 
 /*
