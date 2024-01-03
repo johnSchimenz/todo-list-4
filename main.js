@@ -237,6 +237,16 @@ clickNewToDoButton.addEventListener ('click', () => {
             newestValuesToDo.push(toDoValue);
         }
 
+        // Create newest todo item - DON'T like how this is hard-code; might be able to use '...' but don't want to mess with that now
+        const newestToDo = ToDoFactory(
+            newestValuesToDo[0],
+            newestValuesToDo[1],
+            newestValuesToDo[2],
+            newestValuesToDo[3],
+            newestValuesToDo[4],
+            newestValuesToDo[5]
+        )
+
         /*
         // Push inputBox values into newestToDo array
         for (let i = 0; i < countToDoParameters; i++) {
