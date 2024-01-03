@@ -60,10 +60,6 @@ function removeItemsFromStorage(storageArray, ...items) {
     return storageArray;
 }
 
-addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
-
-addItemsToStorage(projectStorage, project1, project2, project3);
-
 // DOM STUFF
 // DOM - List of all querySelector's
 const selectBottomLeftContainer = document.querySelector('#bottom-left-container');
@@ -103,9 +99,13 @@ function removeDomItems(classAttribute) {
     })
 }
 
-displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
+//addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
 
-displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
+//addItemsToStorage(projectStorage, project1, project2, project3);
+
+//displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
+
+//displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
 // DOM - Make clickNewProjectButton clickable
 clickNewProjectButton.addEventListener ('click', () => {
