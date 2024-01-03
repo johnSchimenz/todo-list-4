@@ -249,7 +249,6 @@ clickNewToDoButton.addEventListener ('click', () => {
 
         // Push inputBox values into newestToDo array
         toDoStorage.push(newestToDo);
-        console.log(toDoStorage);
 
         // Remove fieldset
         selectBottomRightContainer.removeChild(fieldset);
@@ -257,10 +256,9 @@ clickNewToDoButton.addEventListener ('click', () => {
         /*
         // DOM - remove previously displayed projects
         removeDomItems('project');
-
-        // DOM - display all projects, including newestProject
-        displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
         */
+        // DOM - display all projects, including newestProject
+        displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
     })
 
     /*
