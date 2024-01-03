@@ -247,18 +247,14 @@ clickNewToDoButton.addEventListener ('click', () => {
             newestValuesToDo[5]
         )
 
-        /*
         // Push inputBox values into newestToDo array
-        for (let i = 0; i < countToDoParameters; i++) {
-            newestToDo.push[]
-        }
+        toDoStorage.push(newestToDo);
+        console.log(toDoStorage);
 
         // Remove fieldset
         selectBottomRightContainer.removeChild(fieldset);
-
-        // Add newestProject to storage
-        projectStorage.push(newestProject);
-
+        
+        /*
         // DOM - remove previously displayed projects
         removeDomItems('project');
 
