@@ -212,7 +212,6 @@ clickNewToDoButton.addEventListener ('click', () => {
     submitButton.textContent = 'Submit';
     fieldset.appendChild(submitButton);
 
-    /*
     // Create Cancel button for form
     const cancelButton = document.createElement('button');
     cancelButton.setAttribute('type', 'button');
@@ -222,9 +221,10 @@ clickNewToDoButton.addEventListener ('click', () => {
 
     // DOM - make Cancel button clickable
     cancelButton.addEventListener('click', () => {
-        selectBottomLeftContainer.removeChild(fieldset);
+        selectBottomRightContainer.removeChild(fieldset);
     })
 
+    /*
     // DOM - make Submit button clickable
     submitButton.addEventListener ('click', () => {
 
