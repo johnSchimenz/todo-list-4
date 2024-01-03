@@ -43,7 +43,6 @@ const toDo3 = ToDoFactory('Mop', 'n', 'o', 'p', 'q', 'r');
 const toDo4 = ToDoFactory('Vaccuum', 't', 'u', 'v', 'w', 'x');
 const toDo5 = ToDoFactory('Yard Work', 'z', 'aa', 'bb', 'cc', 'dd');
 
-// Function that updates
 // Function that adds items
 function addItemsToStorage(storageArray, ...items) {
     const countItems = items.length;
@@ -142,6 +141,10 @@ clickNewProjectButton.addEventListener ('click', () => {
     // DOM - make Cancel button clickable
     cancelButton.addEventListener('click', () => {
         selectBottomLeftContainer.removeChild(fieldset);
+
+        // Re-enables both create new buttons
+        clickNewProjectButton.removeAttribute('disabled');
+        clickNewToDoButton.removeAttribute('disabled');
     })
 
     // DOM - make Submit button clickable
@@ -161,11 +164,11 @@ clickNewProjectButton.addEventListener ('click', () => {
 
         // DOM - display all projects, including newestProject
         displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
-    })
 
-    // Re-enables both create new buttons
-    clickNewProjectButton.removeAttribute('disabled');
-    clickNewToDoButton.removeAttribute('disabled');
+        // Re-enables both create new buttons
+        clickNewProjectButton.removeAttribute('disabled');
+        clickNewToDoButton.removeAttribute('disabled');
+    })
 })
 
 // DOM - Make clickNewToDoButton clickable
@@ -222,6 +225,10 @@ clickNewToDoButton.addEventListener ('click', () => {
     // DOM - make Cancel button clickable
     cancelButton.addEventListener('click', () => {
         selectBottomRightContainer.removeChild(fieldset);
+
+        // Re-enables both create new buttons
+        clickNewProjectButton.removeAttribute('disabled');
+        clickNewToDoButton.removeAttribute('disabled');
     })
 
     // DOM - make Submit button clickable
@@ -258,9 +265,9 @@ clickNewToDoButton.addEventListener ('click', () => {
 
         // DOM - display all projects, including newestProject
         displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
-    })
 
-    // Re-enables both create new buttons
-    clickNewProjectButton.removeAttribute('disabled');
-    clickNewToDoButton.removeAttribute('disabled');
+        // Re-enables both create new buttons
+        clickNewProjectButton.removeAttribute('disabled');
+        clickNewToDoButton.removeAttribute('disabled');
+    })
 })
