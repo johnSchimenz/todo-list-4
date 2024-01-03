@@ -253,10 +253,9 @@ clickNewToDoButton.addEventListener ('click', () => {
         // Remove fieldset
         selectBottomRightContainer.removeChild(fieldset);
         
-        /*
         // DOM - remove previously displayed projects
-        removeDomItems('project');
-        */
+        removeDomItems('todo');
+
         // DOM - display all projects, including newestProject
         displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
     })
