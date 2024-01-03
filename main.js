@@ -227,12 +227,25 @@ clickNewToDoButton.addEventListener ('click', () => {
     // DOM - make Submit button clickable
     submitButton.addEventListener ('click', () => {
 
+        // Initialize storage for newest todo values
+        const newestValuesToDo = [];
+
+        // Push newest todo values into storage
+        for (let i = 0; i < countToDoParameters; i++) {
+            const selectInputBox = document.querySelector('#' + toDoParameters[i]);
+            const toDoValue = selectInputBox.value;
+            newestValuesToDo.push(toDoValue);
+        }
+
+        /*
+        // Push inputBox values into newestToDo array
+        for (let i = 0; i < countToDoParameters; i++) {
+            newestToDo.push[]
+        }
+
         // Remove fieldset
         selectBottomRightContainer.removeChild(fieldset);
-        
-        // Create new Project
-        const newestProject = ProjectFactory(inputBox.value);
-        /*
+
         // Add newestProject to storage
         projectStorage.push(newestProject);
 
