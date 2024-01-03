@@ -205,7 +205,6 @@ clickNewToDoButton.addEventListener ('click', () => {
         selectPairLabelInputContainer.appendChild(inputBox);
     }
 
-    /*
     // Create Submit button for form
     const submitButton = document.createElement('button');
     submitButton.setAttribute('type', 'submit');
@@ -213,6 +212,7 @@ clickNewToDoButton.addEventListener ('click', () => {
     submitButton.textContent = 'Submit';
     fieldset.appendChild(submitButton);
 
+    /*
     // Create Cancel button for form
     const cancelButton = document.createElement('button');
     cancelButton.setAttribute('type', 'button');
