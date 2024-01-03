@@ -260,9 +260,7 @@ clickNewToDoButton.addEventListener ('click', () => {
         displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
     })
 
-    /*
     // Re-enables both create new buttons
     clickNewProjectButton.removeAttribute('disabled');
     clickNewToDoButton.removeAttribute('disabled');
-    */
 })
