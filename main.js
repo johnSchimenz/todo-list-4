@@ -224,16 +224,15 @@ clickNewToDoButton.addEventListener ('click', () => {
         selectBottomRightContainer.removeChild(fieldset);
     })
 
-    /*
     // DOM - make Submit button clickable
     submitButton.addEventListener ('click', () => {
 
         // Remove fieldset
-        selectBottomLeftContainer.removeChild(fieldset);
-
+        selectBottomRightContainer.removeChild(fieldset);
+        
         // Create new Project
         const newestProject = ProjectFactory(inputBox.value);
-
+        /*
         // Add newestProject to storage
         projectStorage.push(newestProject);
 
@@ -242,8 +241,10 @@ clickNewToDoButton.addEventListener ('click', () => {
 
         // DOM - display all projects, including newestProject
         displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
+        */
     })
 
+    /*
     // Re-enables both create new buttons
     clickNewProjectButton.removeAttribute('disabled');
     clickNewToDoButton.removeAttribute('disabled');
