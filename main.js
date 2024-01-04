@@ -9,6 +9,9 @@ Reminders:
 const projectStorage = [];
 const toDoStorage = [];
 
+// Initialize currentProject
+let currentProject = '';
+
 // Specify parameters for ProjectFactory
 const projectParameters = ['title', 'toDos'];
 
@@ -99,13 +102,26 @@ function removeDomItems(classAttribute) {
     })
 }
 
-//addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
+addItemsToStorage(projectStorage, project1, project2, project3);
 
-//addItemsToStorage(projectStorage, project1, project2, project3);
+addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
+
+const newArray1 = ['f', 'g', 'h', 'i', 'j', 'k'];
+console.log(newArray1);
+let projectF = ProjectFactory('Fire');
+console.log(projectF);
+let toDosF = projectF.toDos;
+console.log(toDosF);
+
+// Can't push items to the toDos array, so have to find.. add, then replace
+toDosF = toDosF.push(newArray1);
+console.log(toDosF);
 
 //displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
 
 //displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
+
+
 
 // DOM - Make clickNewProjectButton clickable
 clickNewProjectButton.addEventListener ('click', () => {
