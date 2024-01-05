@@ -275,7 +275,15 @@ clickNewToDoButton.addEventListener ('click', () => {
 
         // DOM - display all currentProject.toDos
         displayDomItems(selectToDosContainer, currentProject.toDos, toDoParameters, 'todo');
-        //displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
+
+        // Update projectStorage with currentProject's values
+        for (let i = 0; i < projectStorage.length; i++) {
+            if (projectStorage[i].title === currentProject.title) {
+                console.log('Project replaced');
+                projectStorage[i] = currentProject;
+                console.log(projectStorage);
+            }
+        }
 
         // Re-enables both create new buttons
         clickNewProjectButton.removeAttribute('disabled');
