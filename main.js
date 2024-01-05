@@ -72,6 +72,8 @@ const selectToDosContainer = document.querySelector('#todos-container');
 const clickNewProjectButton = document.querySelector('#create-project');
 const clickNewToDoButton = document.querySelector('#create-todo');
 
+// DOM - initially make new todo item unclickable until a project is created
+clickNewToDoButton.setAttribute('disabled', 'disabled');
 
 // DOM - Function that displays items in a container
 function displayDomItems(parentContainer, storage, parameters, classAttribute) {
@@ -258,7 +260,7 @@ clickNewToDoButton.addEventListener ('click', () => {
             newestValuesToDo.push(toDoValue);
         }
 
-        // Create newest todo item - DON'T like how this is hard-code; might be able to use '...' but don't want to mess with that now
+        // Create newest todo item - DON'T like how this is hard-coded; might be able to use '...' but don't want to mess with that now
         const newestToDo = ToDoFactory(
             newestValuesToDo[0],
             newestValuesToDo[1],
@@ -269,7 +271,11 @@ clickNewToDoButton.addEventListener ('click', () => {
         )
 
         // Push inputBox values into newestToDo array
-        toDoStorage.push(newestToDo);
+        currentProject.toDos.push(newestToDo);
+        console.log(newestToDo);
+        console.log(currentProject);
+        //toDoStorage.push(newestToDo);
+
 
         // Remove fieldset
         selectBottomRightContainer.removeChild(fieldset);
