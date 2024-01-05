@@ -108,15 +108,6 @@ addItemsToStorage(projectStorage, project1, project2, project3);
 
 addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
 
-const newArray1 = ['f', 'g', 'h', 'i', 'j', 'k'];
-console.log(newArray1);
-let projectF = ProjectFactory('Fire');
-console.log(projectF);
-projectF.toDos.push(newArray1);
-projectF.toDos.push(['w','x','y','z']);
-console.log(projectF);
-
-
 //displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
 
 //displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
@@ -174,6 +165,9 @@ clickNewProjectButton.addEventListener ('click', () => {
 
         // Add newestProject to storage
         projectStorage.push(newestProject);
+
+        // Make newestProject the currentProject
+        currentProject = newestProject;
 
         // DOM - remove previously displayed projects
         removeDomItems('project');
@@ -271,10 +265,9 @@ clickNewToDoButton.addEventListener ('click', () => {
         )
 
         // Push inputBox values into newestToDo array
-        currentProject.toDos.push(newestToDo);
-        console.log(newestToDo);
         console.log(currentProject);
-        //toDoStorage.push(newestToDo);
+        currentProject.toDos.push('a');
+        console.log(currentProject);
 
 
         // Remove fieldset
