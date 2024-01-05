@@ -110,12 +110,10 @@ const newArray1 = ['f', 'g', 'h', 'i', 'j', 'k'];
 console.log(newArray1);
 let projectF = ProjectFactory('Fire');
 console.log(projectF);
-let toDosF = projectF.toDos;
-console.log(toDosF);
+projectF.toDos.push(newArray1);
+projectF.toDos.push(['w','x','y','z']);
+console.log(projectF);
 
-// Can't push items to the toDos array, so have to find.. add, then replace
-toDosF = toDosF.push(newArray1);
-console.log(toDosF);
 
 //displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
 
