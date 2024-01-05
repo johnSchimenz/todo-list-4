@@ -264,11 +264,8 @@ clickNewToDoButton.addEventListener ('click', () => {
             newestValuesToDo[5]
         )
 
-        // Push inputBox values into newestToDo array
-        console.log(currentProject);
-        currentProject.toDos.push('a');
-        console.log(currentProject);
-
+        // Push newest todo item into currentProject.toDos array
+        currentProject.toDos.push(newestToDo);
 
         // Remove fieldset
         selectBottomRightContainer.removeChild(fieldset);
@@ -276,8 +273,9 @@ clickNewToDoButton.addEventListener ('click', () => {
         // DOM - remove previously displayed projects
         removeDomItems('todo');
 
-        // DOM - display all projects, including newestProject
-        displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
+        // DOM - display all currentProject.toDos
+        displayDomItems(selectToDosContainer, currentProject.toDos, toDoParameters, 'todo');
+        //displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
 
         // Re-enables both create new buttons
         clickNewProjectButton.removeAttribute('disabled');
