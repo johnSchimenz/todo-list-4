@@ -81,23 +81,29 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
     // Length of storage
     const countStorageItems = storage.length;
 
-    // Create container for each item
+    // DOM - Create container for each item
     for (let i = 0; i < countStorageItems; i++) {
         const childContainer = document.createElement('div');
         childContainer.setAttribute('class', classAttribute);
         parentContainer.appendChild(childContainer);
 
+        // DOM - If creating a project, displays the project 
         if (classAttribute === 'project') {
             const subChildContainer = document.createElement('div');
             subChildContainer.textContent = storage[i][parameters[0]];
             childContainer.appendChild(subChildContainer);
         } else {
-        // Create sub-container for each item
+        // DOM - If creating a todo, create sub-container for each item
             for (let j = 0; j < 6; j++) {
                 const subChildContainer = document.createElement('div');
                 subChildContainer.textContent = storage[i][parameters[j]];
                 childContainer.appendChild(subChildContainer);
             }
+
+            // DOM - create a Delete button for each todo item
+            const deleteButton = document.createElement('delete');
+            deleteButton.textContent = 'Delete';
+            childContainer.appendChild(deleteButton);
         }
     }
 }
