@@ -104,15 +104,32 @@ function removeDomItems(classAttribute) {
     })
 }
 
+// DOM - Make existing projects clickable
+function displayToDosOfClickedProject() {
+    let clickProjects = document.querySelectorAll('.project');
+    clickProjects.forEach((project) => {
+        project.addEventListener('click', () => {
+
+            // Update currentProject with the clicked-on pojrect projectStorage with currentProject's values
+            for (let i = 0; i < projectStorage.length; i++) {
+                if (projectStorage[i].title === project.textContent) {
+                    currentProject = projectStorage[i];
+                    console.log(currentProject);
+                }
+            }
+
+            // DOM - Remove past todo items
+            removeDomItems('todo');
+
+            // DOM - Display currentProject todo items
+            displayDomItems(selectToDosContainer, currentProject.toDos, toDoParameters, 'todo');
+        })
+    })
+}
+
 addItemsToStorage(projectStorage, project1, project2, project3);
 
-addItemsToStorage(toDoStorage, toDo1, toDo2, toDo3, toDo4, toDo5);
-
-//displayDomItems(selectToDosContainer, toDoStorage, toDoParameters, 'todo');
-
 //displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
-
-
 
 // DOM - Make clickNewProjectButton clickable
 clickNewProjectButton.addEventListener ('click', () => {
@@ -178,6 +195,10 @@ clickNewProjectButton.addEventListener ('click', () => {
         // Re-enables both create new buttons
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
+
+    // DOM - Display todos of any clicked project
+    displayToDosOfClickedProject();
+
     })
 })
 
@@ -279,9 +300,7 @@ clickNewToDoButton.addEventListener ('click', () => {
         // Update projectStorage with currentProject's values
         for (let i = 0; i < projectStorage.length; i++) {
             if (projectStorage[i].title === currentProject.title) {
-                console.log('Project replaced');
                 projectStorage[i] = currentProject;
-                console.log(projectStorage);
             }
         }
 
