@@ -127,7 +127,9 @@ function displayToDosOfClickedProject() {
     })
 }
 
-//addItemsToStorage(projectStorage, project1, project2, project3);
+
+// These commented-out buttons are only to create a list of projects to use if needed
+addItemsToStorage(projectStorage, project1, project2, project3);
 
 //displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
@@ -146,6 +148,7 @@ clickNewProjectButton.addEventListener ('click', () => {
     // Create inputBox for form
     const inputBox = document.createElement('input');
     inputBox.setAttribute('id', projectParameters[0]);
+    inputBox.setAttribute('placeholder', 'Project Title');
     fieldset.appendChild(inputBox);
 
     // Create Submit button for form
@@ -200,6 +203,10 @@ clickNewProjectButton.addEventListener ('click', () => {
         // DOM - Re-enables create new project button
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
+
+        //Debugging
+        console.log('From create new project');
+        console.log(currentProject);
     })
 
     // DOM - Display todos of any clicked project
@@ -311,5 +318,9 @@ clickNewToDoButton.addEventListener ('click', () => {
         // Re-enables both create new buttons
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
+
+        //Debugging
+        console.log('From create new todo ');
+        console.log(currentProject);
     })
 })
