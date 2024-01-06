@@ -87,11 +87,17 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
         childContainer.setAttribute('class', classAttribute);
         parentContainer.appendChild(childContainer);
 
-        // Create sub-container for each item
-        for (let j = 0; j < 6; j++) {
+        if (classAttribute === 'project') {
             const subChildContainer = document.createElement('div');
-            subChildContainer.textContent = storage[i][parameters[j]];
+            subChildContainer.textContent = storage[i][parameters[0]];
             childContainer.appendChild(subChildContainer);
+        } else {
+        // Create sub-container for each item
+            for (let j = 0; j < 6; j++) {
+                const subChildContainer = document.createElement('div');
+                subChildContainer.textContent = storage[i][parameters[j]];
+                childContainer.appendChild(subChildContainer);
+            }
         }
     }
 }
@@ -173,7 +179,7 @@ clickNewProjectButton.addEventListener ('click', () => {
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
 
-        // DOM - If no projects created, disable create new todo button
+        // DOM - If no projects have been created overall, disable create new todo button
         if (projectStorage.length === 0) {
             clickNewToDoButton.setAttribute('disabled', 'disabled');
         }
@@ -182,7 +188,7 @@ clickNewProjectButton.addEventListener ('click', () => {
     // DOM - make Submit button clickable
     submitButton.addEventListener ('click', () => {
 
-        // Remove fieldset
+        // DOM - Remove fieldset
         selectBottomLeftContainer.removeChild(fieldset);
 
         // Create new Project
@@ -293,8 +299,7 @@ clickNewToDoButton.addEventListener ('click', () => {
             newestValuesToDo[2],
             newestValuesToDo[3],
             newestValuesToDo[4],
-            newestValuesToDo[5]
-        )
+            newestValuesToDo[5]);
 
         // Push newest todo item into currentProject.toDos array
         currentProject.toDos.push(newestToDo);
