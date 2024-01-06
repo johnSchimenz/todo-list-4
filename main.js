@@ -129,7 +129,7 @@ function displayToDosOfClickedProject() {
 
 
 // These commented-out buttons are only to create a list of projects to use if needed
-addItemsToStorage(projectStorage, project1, project2, project3);
+//addItemsToStorage(projectStorage, project1, project2, project3);
 
 //displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
