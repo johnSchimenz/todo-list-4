@@ -110,7 +110,7 @@ function displayToDosOfClickedProject() {
     clickProjects.forEach((project) => {
         project.addEventListener('click', () => {
 
-            // Update currentProject with the clicked-on pojrect projectStorage with currentProject's values
+            // Update currentProject with the clicked-on project projectStorage with currentProject's values
             for (let i = 0; i < projectStorage.length; i++) {
                 if (projectStorage[i].title === project.textContent) {
                     currentProject = projectStorage[i];
@@ -207,10 +207,10 @@ clickNewProjectButton.addEventListener ('click', () => {
         //Debugging
         console.log('From create new project');
         console.log(currentProject);
-    })
 
-    // DOM - Display todos of any clicked project
-    displayToDosOfClickedProject();
+        // DOM - Display todos of any clicked project
+        displayToDosOfClickedProject();
+    })
 })
 
 // DOM - Make clickNewToDoButton clickable
