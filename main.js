@@ -84,6 +84,7 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
     // DOM - Create container for each item
     for (let i = 0; i < countStorageItems; i++) {
         const childContainer = document.createElement('div');
+        childContainer.setAttribute('id', classAttribute + i);
         childContainer.setAttribute('class', classAttribute);
         parentContainer.appendChild(childContainer);
 
@@ -102,14 +103,33 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
             }
 
             // DOM - create a Delete button for each todo item
-            const deleteButton = document.createElement('delete');
+            const deleteButton = document.createElement('button');
             deleteButton.setAttribute('type', 'button');
             deleteButton.setAttribute('id', 'delete' + i);
             deleteButton.setAttribute('class', 'delete');
             deleteButton.textContent = 'DELETE';
             childContainer.appendChild(deleteButton);
 
+            // DOM - make Delete buttons clickable
             const clickDeleteButtons = document.querySelectorAll('.delete');
+            clickDeleteButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    
+                    // Remove the DOM item displaying that particular todo
+                    const deleteButtonId = this.id;
+                    const numberOnButtonId = deleteButtonId.match('/\d+/');
+                    console.log(numberOnButtonId);
+                    const selectToDoItemToBeRemoved = document.querySelector('.todo' + numberOnButtonId);
+                    parentContainer.removeChild(selectToDoItemToBeRemoved);
+
+                    // Delete that particular todo item from projectStorage array and update current project
+
+
+
+
+                })
+            })
+
         }
     }
 }
