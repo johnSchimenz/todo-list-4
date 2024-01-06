@@ -127,7 +127,7 @@ function displayToDosOfClickedProject() {
     })
 }
 
-addItemsToStorage(projectStorage, project1, project2, project3);
+//addItemsToStorage(projectStorage, project1, project2, project3);
 
 //displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
@@ -169,6 +169,11 @@ clickNewProjectButton.addEventListener ('click', () => {
         // Re-enables both create new buttons
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
+
+        // DOM - If no projects created, disable create new todo button
+        if (projectStorage.length === 0) {
+            clickNewToDoButton.setAttribute('disabled', 'disabled');
+        }
     })
 
     // DOM - make Submit button clickable
@@ -192,14 +197,13 @@ clickNewProjectButton.addEventListener ('click', () => {
         // DOM - display all projects, including newestProject
         displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
 
-        // Re-enables both create new buttons
+        // DOM - Re-enables create new project button
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
+    })
 
     // DOM - Display todos of any clicked project
     displayToDosOfClickedProject();
-
-    })
 })
 
 // DOM - Make clickNewToDoButton clickable
