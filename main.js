@@ -220,8 +220,6 @@ clickNewProjectButton.addEventListener ('click', () => {
         // DOM - remove previously displayed todos
         removeDomItems('todo');
 
-        
-
         // DOM - Re-enables create new project button
         clickNewProjectButton.removeAttribute('disabled');
         clickNewToDoButton.removeAttribute('disabled');
