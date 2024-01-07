@@ -96,7 +96,7 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
         } else {
 
         // DOM - If creating a todo, create sub-container for each item
-            for (let j = 0; j < 6; j++) {
+            for (let j = 0; j < toDoParameters.length; j++) {
                 const subChildContainer = document.createElement('div');
                 subChildContainer.textContent = storage[i][parameters[j]];
                 childContainer.appendChild(subChildContainer);
@@ -105,33 +105,12 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
             // DOM - create a Delete button for each todo item
             const deleteButton = document.createElement('button');
             deleteButton.setAttribute('type', 'button');
-            deleteButton.setAttribute('id', 'delete' + i);
+            deleteButton.setAttribute('id', 'delete-' + i);
             deleteButton.setAttribute('class', 'delete');
             deleteButton.textContent = 'DELETE';
             childContainer.appendChild(deleteButton);
-
-            // DOM - make Delete buttons clickable
-            const clickDeleteButtons = document.querySelectorAll('.delete');
-            clickDeleteButtons.forEach((button) => {
-                button.addEventListener('click', () => {
-                    
-                    // Remove the DOM item displaying that particular todo
-                    const deleteButtonId = this.id;
-                    const numberOnButtonId = deleteButtonId.match('/\d+/');
-                    console.log(numberOnButtonId);
-                    const selectToDoItemToBeRemoved = document.querySelector('.todo' + numberOnButtonId);
-                    parentContainer.removeChild(selectToDoItemToBeRemoved);
-
-                    // Delete that particular todo item from projectStorage array and update current project
-
-
-
-
-                })
-            })
-
-        }
-    }
+        };
+    };
 }
 
 // DOM - Function that removes items in a container
@@ -237,6 +216,11 @@ clickNewProjectButton.addEventListener ('click', () => {
 
         // DOM - display all projects, including newestProject
         displayDomItems(selectProjectsContainer, projectStorage, projectParameters, 'project');
+
+        // DOM - remove previously displayed todos
+        removeDomItems('todo');
+
+        
 
         // DOM - Re-enables create new project button
         clickNewProjectButton.removeAttribute('disabled');
