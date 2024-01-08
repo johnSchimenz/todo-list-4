@@ -111,6 +111,14 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
             childContainer.appendChild(deleteButton);
         };
     };
+
+    // DOM - Make Delete buttons clickable
+    const clickDeleteButtons = document.querySelectorAll('.delete');
+    clickDeleteButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            console.log('this worked');
+        })
+    })
 }
 
 // DOM - Function that removes items in a container
