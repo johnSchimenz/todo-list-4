@@ -116,10 +116,17 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
     const clickDeleteButtons = document.querySelectorAll('.delete');
     clickDeleteButtons.forEach((button) => {
         button.addEventListener('click', () => {
+            
+            // Get number from delete button's id
             const idButton = button.id;
             const splitId = idButton.split('-');
-            const numberFromId = splitId[1];
-            console.log(numberFromId);
+            const deleteButtonId = splitId[1];
+            
+            // Create id of parent todo container that contains the Delete button
+            const selectIndividualToDoContainer = document.querySelector('.todo' + deleteButtonId);
+
+
+
         })
     })
 }
