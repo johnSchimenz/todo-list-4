@@ -116,7 +116,10 @@ function displayDomItems(parentContainer, storage, parameters, classAttribute) {
     const clickDeleteButtons = document.querySelectorAll('.delete');
     clickDeleteButtons.forEach((button) => {
         button.addEventListener('click', () => {
-            console.log('this worked');
+            const idButton = button.id;
+            const splitId = idButton.split('-');
+            const numberFromId = splitId[1];
+            console.log(numberFromId);
         })
     })
 }
